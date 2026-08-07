@@ -25,6 +25,16 @@
 
 # Ionic Web View for Cordova
 
+## Why this fork exists
+
+Forked from [upstream](https://github.com/ionic-team/cordova-plugin-ionic-webview) because the plugin injected an iOS `deployment-target` preference into `config.xml` that overrode the app's own deployment target setting.
+
+Published as [`@herdwatch/cordova-plugin-ionic-webview`](https://www.npmjs.com/package/@herdwatch/cordova-plugin-ionic-webview).
+
+Changes from upstream:
+- Commented out the `deployment-target` preference injection in `plugin.xml` so it no longer overrides the app's own iOS deployment target
+- Republished the package under the `@herdwatch` npm scope
+
 A Web View plugin for Cordova, focused on providing the highest performance experience for Ionic apps (but can be used with any Cordova app).
 
 This plugin uses WKWebView on iOS and the latest evergreen webview on Android. Additionally, this plugin makes it easy to use HTML5 style routing that web developers expect for building single-page apps.
