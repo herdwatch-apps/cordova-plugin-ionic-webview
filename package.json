@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview"
+    "url": "git+https://github.com/herdwatch-apps/cordova-plugin-ionic-webview.git"
   },
   "bugs": {
-    "url": "https://github.com/ionic-team/cordova-plugin-ionic-webview/issues"
+    "url": "https://github.com/herdwatch-apps/cordova-plugin-ionic-webview/issues"
   },
   "keywords": [
     "cordova",
@@ -74,5 +74,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "homepage": "https://github.com/herdwatch-apps/cordova-plugin-ionic-webview#readme"
 }
