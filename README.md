@@ -29,11 +29,14 @@
 
 Forked from [upstream](https://github.com/ionic-team/cordova-plugin-ionic-webview) because the plugin injected an iOS `deployment-target` preference into `config.xml` that overrode the app's own deployment target setting.
 
+It also showed no JavaScript dialogs in an app on cordova-ios 8: the scene lifecycle leaves the application delegate's `window` empty, and the plugin presented `alert`, `confirm` and `prompt` from it, so nothing was shown and the page stayed blocked.
+
 Published as [`@herdwatch/cordova-plugin-ionic-webview`](https://www.npmjs.com/package/@herdwatch/cordova-plugin-ionic-webview).
 
 Changes from upstream:
 - Commented out the `deployment-target` preference injection in `plugin.xml` so it no longer overrides the app's own iOS deployment target
 - Republished the package under the `@herdwatch` npm scope
+- iOS: `alert`, `confirm` and `prompt` are presented from the web view's own window (its root view controller, or whatever is presented on top of it) instead of the application delegate's window, and the completion handler is called when there is nothing to present from, so the page is never left blocked
 
 A Web View plugin for Cordova, focused on providing the highest performance experience for Ionic apps (but can be used with any Cordova app).
 
